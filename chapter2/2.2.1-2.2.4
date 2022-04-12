@@ -1,0 +1,36 @@
+### 2.2.1
+$$\Theta(n^3)$$
+
+### 2.2.2
+//选择排序
+```c++
+vector<int>selection_sort(vector<int> array){
+	for(int i = 0;i < array.size() -1; i++){
+		int min_index = i;
+			for(int j = i + 1; j < array.size(); j++){
+				if(array[min_index] > array[j])
+					min_index = j;
+	}
+	swap(array[i],array[min_index]);
+}
+	return array;
+}
+int main() {
+	vector<int> array = {6, 5, 4, 3, 2, 1};
+	for(auto c : selection_sort(array))
+	cout << c << endl;
+```
+//最好最坏的情况都是
+$\Theta(n^2)$
+
+### 2.2.3
+/*vector<int>知道size的情况下
+平均是n/2
+最好是1
+最差是n
+*/
+$\Theta(n)$
+
+### 2.2.4
+1. 首先先检查一遍是否已经排序到
+2. 如果是已经排序到了，就结束，否则进行正常排序
